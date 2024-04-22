@@ -10,7 +10,7 @@ HEIGHT = 500
 SIZE = (WIDTH, HEIGHT)
 
 screen = pygame.display.set_mode(SIZE)
-pygame.display.set_caption("My game")
+pygame.display.set_caption("Bouncing Rectangle")
 # ---------------------------
 
 # Used to manage how fast the screen updates
@@ -18,6 +18,10 @@ clock = pygame.time.Clock()
 
 # ---------------------------
 # Initialize global variables
+
+# Colours
+black = (0, 0, 0)
+white = (255, 255, 255)
 
 # ---------------------------
 
@@ -38,8 +42,12 @@ while running:
     # ----- GAME STATE UPDATES -----
     # All game math and comparisons happen here
 
+    
     # ----- DRAWING -----
-    screen.fill((255, 255, 255))  # always the first drawing command
+    screen.fill(white)  # always the first drawing command
+
+    # Rectangle
+    pygame.draw.rect(screen, black, [50, 50, 50, 50])
 
     # Must be the last two lines of the game loop
     pygame.display.flip()
